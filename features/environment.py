@@ -1,5 +1,6 @@
 from selenium.webdriver import Chrome
-from page_objects.homepage import HomePage
+
+
 def before_all(context):
    pass
 
@@ -10,9 +11,7 @@ def before_feature(context, feature):
 
 def before_scenario(context, scenario):
     context.driver = Chrome()
-    context.home_page =HomePage(context.driver)
     context.driver.maximize_window()
-    context.driver.get('https://www.linkedin.com/')
 
 
 def after_scenario(context, scenario):

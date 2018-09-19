@@ -1,12 +1,5 @@
-bot.env
-node_modules/
-*node_modules/
-apps/shared/bower_components
-apps/shared/env.js
-dist/*
 coverage/
 *junitResults/
-npm-debug.log
 *.pyc
 *.swp
 *.swo
@@ -16,64 +9,10 @@ npm-debug.log
 .nvmrc
 *.bak
 
-# Lockfiles (until we update Platform UI to use them; particularly in Jenkins)
-package-lock.json
-yarn.lock
-
-# Vagrant Stuff
-.vagrant
-/Vagrantfile
-bin/
-target/
-
-# VIM Ctags
-tags
-
-# new relic logs
-newrelic_agent.log
-
-# Used to override how the platform-ui runs it's instance in vagrant.
-# Can override the usual supervisor.conf file
-supervisor.conf-local
-
-# tern_for_vim set up file
-.tern-project
-
 # Ignores for the Behave Tests
 .Python
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
 # Pycharm Ignores
 .idea
 .bundle/
 atlassian-ide-plugin.xml
-
-# if local python packages get installed
-tests/behave/src/
-tests/behave/.pyenv/
-
-# User Credentials
-tests/behave/conf/users.json
-tests/behave/rerun_failing.features
-
-# clone the unified fork to this directory to make changes
-apps/shared/lib/react-bootstrap-daterangepicker/*
-
-# python scratch for data munging
-scratch.py
-
-# JUnit files for Jenkins reporters
-*.xml
-
-# IDE - VSCode
-# ============
-.vscode

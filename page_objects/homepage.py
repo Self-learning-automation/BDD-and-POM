@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from page_objects.page import Page
-from hamcrest import assert_that, equal_to
 
 
 class HomePage(Page):
@@ -8,18 +7,16 @@ class HomePage(Page):
     login_field = (By.ID, 'login-email')
     pwd_field = (By.ID, 'login-password')
     submit_btn = (By.ID, 'login-submit')
-    name_field = (By.XPATH, '//*[@id="ember2196"]/span')
+    name_field = (By.CSS_SELECTOR, '[data-control-name="identity_welcome_message"]>span')
 
     def input_username(self, username):
-        self.input((HomePage.login_field[0], HomePage.login_field[1]), username)
+        self.type_text(self.login_field, username)
 
     def input_password(self, password):
-        self.input((self.pwd_field[0], self.pwd_field[1]), password)
+        self.type_text(self.pwd_field, password)
 
     def click_login(self):
-        self.click((self.submit_btn[0], self.submit_btn[1]))
+        self.click_element(self.submit_btn)
 
-    def verify_login(self, name):
-        expected_result = name
-        actual_result = self.get_text((self.name_field[0], self.name_field[1]))
-        assert_that(actual_result, equal_to(expected_result), "Verify User name")
+    def get_user_name(self):
+        return self.get_element_text(self.name_field)
