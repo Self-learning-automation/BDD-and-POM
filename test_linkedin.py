@@ -29,7 +29,7 @@ profile.click()
 
 # Verify name
 actual_name = wait.until(EC.presence_of_element_located((name_field[0], name_field[1]))).text
-expected_name = 'Tuan Bui1'
+expected_name = 'Tuan Bui'
 
 # actual_name= driver.find_element(name_field[0],name_field[1]).text
 assert_that(actual_name, equal_to(expected_name), 'Verify the full name is correct')
